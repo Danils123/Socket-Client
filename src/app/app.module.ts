@@ -10,6 +10,11 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { FooterComponent } from './components/footer/footer.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { ListaUsuarioComponent } from './components/lista-usuario/lista-usuario.component';
+import { LoginComponent } from './pages/login/login.component';
+import { MensajesComponent } from './pages/mensajes/mensajes.component';
+import { AppRoutingModule } from './app-routing.module';
+
 
 const config: SocketIoConfig = { url: environment.wsUrl, options: {} };
 
@@ -19,9 +24,12 @@ const config: SocketIoConfig = { url: environment.wsUrl, options: {} };
     FooterComponent,
     ChatComponent,
     MensajeChatComponent,
-    LoadersComponent
+    LoadersComponent,
+    ListaUsuarioComponent,
+    LoginComponent,
+    MensajesComponent
   ],
-  imports: [BrowserModule, SocketIoModule.forRoot(config), FormsModule],
+  imports: [BrowserModule, SocketIoModule.forRoot(config), FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })

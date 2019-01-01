@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Mensaje } from '../../interfaces/mensaje.interface';
 import { ChatService } from '../../services/chat.service';
+import { WebsocketService } from '../../services/websocket.service';
 @Component({
   selector: 'app-mensaje-chat',
   templateUrl: './mensaje-chat.component.html',
@@ -8,7 +9,7 @@ import { ChatService } from '../../services/chat.service';
 })
 export class MensajeChatComponent implements OnInit {
   @Input() mensaje: Mensaje;
-  constructor(public _cs: ChatService) {}
+  constructor(public _ws: WebsocketService) { }
 
   ngOnInit() {}
 }
