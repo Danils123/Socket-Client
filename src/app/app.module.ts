@@ -14,6 +14,7 @@ import { ListaUsuarioComponent } from './components/lista-usuario/lista-usuario.
 import { LoginComponent } from './pages/login/login.component';
 import { MensajesComponent } from './pages/mensajes/mensajes.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SomepipePipe } from './pipes/somepipe.pipe';
 
 
 const config: SocketIoConfig = { url: environment.wsUrl, options: {} };
@@ -27,7 +28,8 @@ const config: SocketIoConfig = { url: environment.wsUrl, options: {} };
     LoadersComponent,
     ListaUsuarioComponent,
     LoginComponent,
-    MensajesComponent
+    MensajesComponent,
+    SomepipePipe
   ],
   imports: [BrowserModule, SocketIoModule.forRoot(config), FormsModule, AppRoutingModule],
   providers: [],

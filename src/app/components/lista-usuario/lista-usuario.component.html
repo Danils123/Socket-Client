@@ -1,12 +1,11 @@
 <h3>Usuarios Activos</h3>
 
 <ul class="list-group">
-  <li
-    class="list-group-item"
-    *ngFor="let usuario of (usuariosActivosObs | async)"
-  >
-    {{ usuario.nombre }}
-    <span class="badge badge-primary"> {{ usuario.sala }} </span>
-    <span class="badge badge-info"> {{ usuario.id }} </span>
-  </li>
+  <div *ngFor="let usuario of (usuariosActivosObs | async)">
+    <li class="list-group-item" *ngIf="usuario.id !== _cs.wsSocket.usuario.id">
+      {{ usuario.nombre }}
+      <span class="badge badge-primary"> {{ usuario.sala }} </span>
+      <span class="badge badge-info"> {{ usuario.id }} </span>
+    </li>
+  </div>
 </ul>
