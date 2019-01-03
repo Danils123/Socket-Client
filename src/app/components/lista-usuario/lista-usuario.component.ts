@@ -10,11 +10,18 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class ListaUsuarioComponent implements OnInit {
   public usuariosActivosObs: Observable<any>;
+  public activo: boolean;
 
-  constructor(public _cs: ChatService) {}
+  constructor(public _cs: ChatService) {
+    this.activo = false;
+  }
 
   ngOnInit() {
     this.usuariosActivosObs = this._cs.getUsuarioActivos();
     this._cs.emitirUsuariosActivos();
+  }
+
+  activarChat() {
+    this.activo = !this.activo;
   }
 }

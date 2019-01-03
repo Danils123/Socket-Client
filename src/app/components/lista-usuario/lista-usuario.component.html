@@ -2,10 +2,13 @@
 
 <ul class="list-group">
   <div *ngFor="let usuario of (usuariosActivosObs | async)">
-    <li class="list-group-item" *ngIf="usuario.id !== _cs.wsSocket.usuario.id">
-      {{ usuario.nombre }}
-      <span class="badge badge-primary"> {{ usuario.sala }} </span>
-      <span class="badge badge-info"> {{ usuario.id }} </span>
+    <li
+      class="list-group-item"
+      *ngIf="usuario.id !== _cs.wsSocket.usuario.id"
+      [ngClass]="activo ? 'color-green' : ''"
+      (click)="activarChat()"
+    >
+      {{ usuario.nombre }} <i class="fa fa-circle online"></i>
     </li>
   </div>
 </ul>

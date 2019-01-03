@@ -1,12 +1,23 @@
-<div class="message-data " [ngClass]="mensaje.uid === _ws.usuario.id ? 'align-right' : ''">
-    <span class="message-data-time"><small>{{ mensaje.fecha }}</small>
-  </span> &nbsp; <span class="message-data-name">{{ mensaje.nombre }} </span>
-    <i class="fa fa-circle" [ngClass]="mensaje.uid === _ws.usuario.id ? 'me' : 'online'"></i>
+<div
+  class="message-data "
+  [ngClass]="mensaje.uid === _ws.usuario.id ? 'align-right' : ''"
+>
+  <span class="message-data-time"
+    ><small>{{ mensaje.fecha }}</small>
+  </span>
+  &nbsp; <span class="message-data-name">{{ mensaje.nombre }} </span>
+  <i
+    class="fa fa-circle online"
+    [ngClass]="mensaje.uid === _ws.usuario.id ? 'me' : 'online'"
+  ></i>
 </div>
-<div class="message" [ngClass]="{
-  'float-right': mensaje.uid ===_ws.usuario.id,
-  'other-message': mensaje.uid === _ws.usuario.id,
-  'my-message': mensaje.uid !== _ws.usuario.id
-}">
-    {{ mensaje.mensaje }}
+<div
+  class="message"
+  [ngClass]="{
+    'float-right': mensaje.uid === _ws.usuario.id,
+    'other-message': mensaje.uid === _ws.usuario.id,
+    'my-message': mensaje.uid !== _ws.usuario.id
+  }"
+>
+  {{ mensaje.mensaje }}
 </div>
