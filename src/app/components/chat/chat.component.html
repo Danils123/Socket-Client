@@ -1,52 +1,60 @@
-<h2>Mensajes</h2>
+<h3>Mensajes</h3>
 <hr />
 
 <div class="">
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="">
-                <div class="chat">
-                    <!-- chat-header -->
-                    <div class="chat-header clearfix">
-                        <img [src]="" class="imgAvatar" alt="avatar" />
-                        <div class="chat-about">
-                            <div class="chat-with">Mensajeando</div>
-                            <div class="chat-num-messages">Muchos mensajes</div>
-                        </div>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <!-- end chat-header -->
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="">
+        <div class="chat">
+          <!-- chat-header -->
+          <div class="chat-header clearfix">
+            <img [src]="" class="imgAvatar" alt="avatar" />
+            <div class="chat-about">
+              <div class="chat-with">Mensajeando</div>
+              <div class="chat-num-messages">Muchos mensajes</div>
+            </div>
+            <i class="fa fa-star"></i>
+          </div>
+          <!-- end chat-header -->
 
-                    <!-- chat-history -->
-                    <div class="chat-history" id="app-mensajes">
-                        <div id="loader">
-                            <app-loaders></app-loaders>
-                        </div>
-                        <ul id="lista" hidden>
-                            <li class="clearfix" *ngFor="let mensaje of mensajes">
-                                <app-mensaje-chat [mensaje]="mensaje"></app-mensaje-chat>
-                            </li>
+          <!-- chat-history -->
+          <div class="chat-history" id="app-mensajes">
+            <div id="loader"><app-loaders></app-loaders></div>
+            <ul id="lista" hidden>
+              <li class="clearfix" *ngFor="let mensaje of mensajes">
+                <app-mensaje-chat [mensaje]="mensaje"></app-mensaje-chat>
+              </li>
 
-                            <!-- <li class="clearfix" *ngFor="let mensaje of mensajes">
+              <!-- <li class="clearfix" *ngFor="let mensaje of mensajes">
                                 {{ mensaje.de }}: {{ mensaje.cuerpo }}
                             </li> -->
-                        </ul>
-                    </div>
-                    <!-- end chat-history -->
+            </ul>
+          </div>
+          <!-- end chat-history -->
 
-                    <div class="chat-message clearfix">
-                        <textarea type="text" name="texto" [(ngModel)]="this.texto" (keyup.enter)="enviar()" id="message-to-send" class="form-control" placeholder="Mensaje..." autocomplete="off" autofocus></textarea>
-                        <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
-                        <i class="fa fa-file-image-o"></i>
+          <div class="chat-message clearfix">
+            <textarea
+              type="text"
+              name="texto"
+              [(ngModel)]="this.texto"
+              (keyup.enter)="enviar()"
+              id="message-to-send"
+              class="form-control"
+              placeholder="Mensaje..."
+              autocomplete="off"
+              autofocus
+            ></textarea>
+            <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
+            <i class="fa fa-file-image-o"></i>
 
-                        <button (click)="enviar()">
+            <button (click)="enviar()">
               <i class="fa fa-paper-plane"></i> Enviar
             </button>
-                    </div>
-                    <!-- end chat-message -->
-                </div>
-            </div>
-            <!-- end container -->
+          </div>
+          <!-- end chat-message -->
         </div>
+      </div>
+      <!-- end container -->
     </div>
+  </div>
 </div>

@@ -7,10 +7,11 @@ import { WebsocketService } from '../../services/websocket.service';
   styleUrls: ['./mensajes.component.css']
 })
 export class MensajesComponent implements OnInit {
+  constructor(public _ws: WebsocketService) {}
 
-  constructor(public _ws: WebsocketService) { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  salir() {
+    this._ws.logoutWS();
   }
-
 }
